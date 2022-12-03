@@ -1,8 +1,8 @@
 ﻿
-var hora = 0
-var minuto = 0
-var segundo = 0
-var pause=true;
+var hour = 0
+var minute = 0
+var second = 0
+var pause=false
 
 
 /////////////////////////////////
@@ -11,35 +11,78 @@ var pause=true;
 
 function timer() {        
   setTimeout(function() {  
-    if (segundo==0&&minuto>0){
-        minuto-=1
-        segundo=60
+    if (second==0&&minute>0){
+        minute-=1
+        second=60
     }
-    if(minuto==00&&hora>0){
-        hora-=1
-        minuto=59
+    if(minute==00&&hour>0){
+        hour-=1
+        minute=59
     }
-    segundo-=1  
+    second-=1  
 
-    console.log(`${hora}:${minuto}:${segundo}`)
-    //tranferir para o html depois
+    console.log(`${hour}:${minute}:${second}`)
+    //second
     
-    if (segundo>0&&pause==false) {          
-      timer();             
-    }                       
-  }, 1000)
-}
+    var sec = document.getElementById("second")
+    sec.innerHTML=`${second}`
 
-timer();                   //  start the loop
+    function showPanel(fieldName) {
+      var fieldNameElement = document.getElementById('field_name');
+      fieldNameElement.innerHTML = "My new text!";
+
+    }
+
+
+
+    //transfer to html query selector
+    
+    if (second>0&&pause==false) {          
+      timer()             
+    }else{
+      //sound/ add in list #time break or study / and question (good,mid,bad) produtivity 
+    }                    
+  }, 1000)
+  
+    
+}
 
 
 function start(){
-    pause=false
+  pause=false
+  timer()
 }
 
 function _stop(){
-    pause=true
+  pause=true
 }
 
 
+function setTime(h,m,s){
+  h=hour
+  m=minute
+  s=second
+  //config in html time focus
+}
 
+function setBreak(h,m,s){
+  h=hour
+  m=minute
+  s=second
+  //config in html time to brak
+}
+
+
+////TESTING
+
+//start()
+//stop()
+//setTime()
+//setBreak()
+
+
+
+
+//OKS
+
+//timer()

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My pomodoro</title>
     <link rel="stylesheet" href="style.css">
-
+    <script src="app.js"></script>
 </head>
 
 <header>
@@ -20,18 +20,39 @@
     <div class="description"></div>
     
     <div class="display">
-        <span class="hour">00</span>
+        <span id="hour" class="hour">00</span>
         <span>:</span>
-        <span class="minute">00</span>
+        <span id="minute" class="minute">00</span>
         <span>:</span>
-        <span class="second">00</span>
+        <span id="second" class="second">00</span>
     </div>
 
-    <div class="config">
-        <input class=" box hours" type="number" value="0">
-        <input class="box minutes" type="number" value="0">
-        <input class="box seconds" type="number" value="0">
+    <div class="conteinerConfig">
+        <div class="configFocus">
+
+            <h2>Time focus</h2>
+            <input class=" box hours" type="number" value="0">
+            <input class="box minutes" type="number" value="0">
+            <input class="box seconds" type="number" value="0">
+
+            
+        </div>
+
+        <div class="configShortBreak">
+            
+            <h2>Time short break</h2>
+            <input class=" box hours" type="number" value="0">
+            <input class="box minutes" type="number" value="0">
+            <input class="box seconds" type="number" value="0">
+
+            
+        </div>
+
+        <input class="buttonSave" type="button" value="Save">
+
     </div>
+
+
 
     <div class="bt-start button click">Start</div>
     <div class="bt-stop button click">Stop</div>
