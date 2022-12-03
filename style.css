@@ -1,1 +1,128 @@
 ﻿
+*{
+    font-family: sans-serif;
+}
+
+.click{
+    cursor: pointer;
+}
+
+.conteinerConfig{
+    font-family: sans-serif;
+    z-index: 1;
+    
+    background-color: gray;
+
+    border-style: solid;
+    border-radius:20px ;
+    border-width: 1px;
+    text-align: center;
+    height: 280px ;
+    width: 500px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: none; /*here in js hide or open in screem (fixed/none)*/
+}
+
+h2{
+    font-size: 27px;
+}
+input{
+    text-align: center;
+    height: 30px;
+    width: 100px;
+}
+
+.box{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    
+
+}
+.buttonSave{
+    position: relative;
+    top: 10px;  
+    height: 28px;
+    width: 50px;
+    font-size: large; 
+}
+/*////////////// COnfig feito//////////*/
+
+header{
+    margin-bottom: 10px;
+    font-size: 40px;
+    text-align: center;
+    
+
+}
+/*///////////////////////////////////////*/
+.display{
+    border-style: solid;
+    border-radius:10px;
+    text-align: center;
+    font-size: 40px;
+    width: 300px;
+    align-items: center;
+    position: relative ;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*/////////////////buttons//////////////*/
+
+.button{
+    border-style: solid;
+    width: 70px;
+    border-radius: 5px;
+    border-width: 1px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.bt-start{
+    position: relative;
+    left: 50%;
+    transform: translate(-210%, 0);
+}
+.bt-stop{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 30px;
+}
+.bt-reset{
+    position: relative;
+    left: 50%;
+    transform: translate(114%, 0);
+    bottom: 60px;
+}
+
+.config-button{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    width: max-content;
+    font-size: x-large;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+.contact{
+    font-size: x-large;
+}
+.insta{
+    width: 60px;
+    height: 60px;
+    position: relative;
+    bottom: 65px;
+    left: 128px;
+}
+
+.copy{
+    text-align: center;
+
+}

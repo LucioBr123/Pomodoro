@@ -1,43 +1,45 @@
 ﻿
-var hour = 0
-var minute = 0
-var second = 0
+var bHour = 0
+var bMinute = 0
+var bSecond = 0
 var pause=false
 
 
-/////////////////////////////////
+
+
+
 
                 
 
 function timer() {        
   setTimeout(function() {  
-    if (second==0&&minute>0){
-        minute-=1
-        second=60
+    if (bSecond==0&&bMinute>0){
+        bMinute-=1
+        bSecond=60
     }
-    if(minute==00&&hour>0){
-        hour-=1
-        minute=59
+    if(bMinute==00&&bHour>0){
+        bHour-=1
+        bMinute=59
     }
-    second-=1  
+    bSecond-=1  
 
-    console.log(`${hour}:${minute}:${second}`)
+    //console.log(`${hour}:${minute}:${second}`)
     //second
     
     var sec = document.getElementById("second")
-    sec.innerHTML=`${second}`
+    sec.innerHTML=`${bSecond}`
 
-    function showPanel(fieldName) {
-      var fieldNameElement = document.getElementById('field_name');
-      fieldNameElement.innerHTML = "My new text!";
+    var min = document.getElementById("minute")
+    min.innerHTML=`${bMinute}`
 
-    }
+    var hou = document.getElementById("hour")
+    hou.innerHTML=`${bHour}`
 
 
 
     //transfer to html query selector
     
-    if (second>0&&pause==false) {          
+    if (bSecond>0&&pause==false) {          
       timer()             
     }else{
       //sound/ add in list #time break or study / and question (good,mid,bad) produtivity 
@@ -46,6 +48,60 @@ function timer() {
   
     
 }
+
+////////////////////////////////////////////////////////////////////
+
+var bHour = 0
+var bMinute = 0
+var bSecond = 0
+
+
+function timer2() {        
+    setTimeout(function() {  
+      if (bSecond==0&&bMinute>0){
+          bMinute-=1
+          bSecond=60
+      }
+      if(bMinute==00&&bHour>0){
+          bHour-=1
+          bMinute=59
+      }
+      bSecond-=1  
+  
+      //console.log(`${hour}:${minute}:${second}`)
+      //second
+      
+      var bSec = document.getElementById("second")
+      bSec.innerHTML=`${bSecond}`
+  
+      var bMin = document.getElementById("minute")
+      bMin.innerHTML=`${bMinute}`
+  
+      var bHou = document.getElementById("hour")
+      bHou.innerHTML=`${bHour}`
+  
+  
+  
+      //transfer to html query selector
+      
+      if (bSecond>0&&pause==false) {          
+        timer2()             
+      }else{
+        //sound/ add in list #time break or study / and question (good,mid,bad) produtivity 
+      }                    
+    }, 1000)
+    
+      
+  }
+
+  /////////////////////////////////////////////////////
+
+
+
+
+
+
+
 
 
 function start(){
@@ -59,16 +115,16 @@ function _stop(){
 
 
 function setTime(h,m,s){
-  h=hour
-  m=minute
-  s=second
+  h=bHour
+  m=bMinute
+  s=bSecond
   //config in html time focus
 }
 
 function setBreak(h,m,s){
-  h=hour
-  m=minute
-  s=second
+  h=bHour
+  m=bMinute
+  s=bSecond
   //config in html time to brak
 }
 
