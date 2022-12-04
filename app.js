@@ -102,20 +102,44 @@ function timerBreak() {
   }
 
 ////////////////////////////////////////////////////////////////////
-
-
-function createLi(){
-  var listMarks = document.createElement('div')
-  listMarks.innerHTML= `One round of study completed!`
+var count =0
+function countStudy() {
+   count+=1
 }
 
-function createLiBreak(){
-  var listMarks = document.createElement('div')
-  listMarks.innerHTML= `Another round of pause completed!`
+function taskStudyCompleted() {
+  // create a new div element
+  const newDiv = document.createElement("div");
+  newDiv.className='Marking'
+  countStudy()
+  // and give it some content
+  const newContent = document.createTextNode(`# ${count} round of study completed!`);
+
+  // add the text node to the newly created div
+  newDiv.appendChild(newContent);
+
+  // add the newly created element and its content into the DOM
+  const currentDiv = document.getElementById("div1");
+  document.body.insertBefore(newDiv, currentDiv);
 }
 
 
+function breakCompleted() {
+  // create a new div element
+  const newDiv = document.createElement("div");
+  newDiv.className='Marking'
+  
+  // and give it some content
+  const newContent = document.createTextNode(`Another round of pause completed!`);
 
+  // add the text node to the newly created div
+  newDiv.appendChild(newContent);
+
+  // add the newly created element and its content into the DOM
+  const currentDiv = document.getElementById("div1");
+  document.body.insertBefore(newDiv, currentDiv);
+  
+}
 
 
 
@@ -154,8 +178,8 @@ function setBreak(h,m,s){
 //stop()
 //setTime()
 //setBreak()
-createLi()
-createLiBreak()
+//createLi()
+//createLiBreak()
 
 
 

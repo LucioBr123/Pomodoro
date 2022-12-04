@@ -51,7 +51,7 @@ input{
 /*////////////// COnfig feito//////////*/
 
 header{
-    margin-bottom: 10px;
+    
     font-size: 40px;
     text-align: center;
     
@@ -126,3 +126,11 @@ header{
     text-align: center;
 
 }
+
+footer{
+    position: static;
+    background: gray;
+
+}
+body{background-color: blue;}
+header{background: red;}
