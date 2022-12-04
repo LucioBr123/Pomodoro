@@ -127,10 +127,7 @@ header{
 
 }
 
-footer{
-    position: static;
-    background: gray;
-
+header{
+    background-color: aqua;
+    
 }
-body{background-color: blue;}
-header{background: red;}
