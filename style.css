@@ -24,6 +24,11 @@
     transform: translate(-50%, 0);
     display: none; /*here in js hide or open in screem (fixed/none)*/
 }
+.description{
+    font-size: x-large;
+    text-align: center;
+
+}
 
 h2{
     font-size: 27px;
@@ -111,9 +116,8 @@ header{
     border-radius: 5px;
 }
 
-.contact{
-    font-size: x-large;
-}
+
+
 .insta{
     width: 60px;
     height: 60px;
@@ -124,10 +128,11 @@ header{
 
 .copy{
     text-align: center;
-
+    font-size: x-large;
 }
 
-header{
-    background-color: aqua;
-    
+
+
+.marking{
+    text-align:center;
 }
