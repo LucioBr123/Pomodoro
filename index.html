@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My pomodoro</title>
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
+    <script src="test.js"></script>
 </head>
 
 <header>
@@ -29,16 +29,16 @@
         <span id="second" class="second">00</span>
     </div>
 
-    <div class="conteinerConfig">
+    <div id="conteinerConfig" class="conteinerConfig">
         <div class="configFocus">
 
             <h2>Time focus</h2>
             Hour
-            <input class=" box hours" type="number" value="0">
+            <input id="box-hour" class=" box hours" type="number" value="0">
             Min
-            <input class="box minutes" type="number" value="0">
+            <input id="box-minute" class="box minutes" type="number" value="45">
             Sec
-            <input class="box seconds" type="number" value="0">
+            <input id="box-second" class="box seconds" type="number" value="0">
 
             
         </div>
@@ -47,38 +47,41 @@
 
             <h2>Time short break</h2>
             Hour
-            <input class=" box hours" type="number" value="0">
+            <input id="box-break-hour" class=" box hours" type="number" value="0">
             Min
-            <input class="box minutes" type="number" value="0">
+            <input id="box-break-minute" class="box minutes" type="number" value="15">
             Sec
-            <input class="box seconds" type="number" value="0">
+            <input id="box-break-second" class="box seconds" type="number" value="0">
 
         </div>
 
-        <input class="buttonSave" type="button" value="Save">
+        <input onclick="save()" class="buttonSave" type="button" value="Save">
 
     </div>
 
 
 
-    <div class="bt-start button click">Start</div>
-    <div class="bt-stop button click" onclick="document.body.div=taskStudyCompleted()">Stop</div>
-    <div class="bt-reset button click" onclick="breakCompleted()">Reset</div>
+    <div class="bt-start button click" onclick="start()">Start</div>
+    <div class="bt-stop button click" onclick="_stop()">Stop</div>
+    <div class="bt-reset button click" onclick="reset()">Reset</div>
 
-    <div class="config-button click">Configuration</div>
+    <div onclick="config()" class="config-button click">Configuration</div>
     <img src="#" alt="">
 
     <div class="marking">
         <h1>Activity count</h1>
+    </div>
+    <div id="marking" class="marking">
+        
     </div>
     <!--here a list for marking time pomodoro-->
 </body>
 
 <footer>
     
-    <div class="contact">
-        <p class="copy">&copy; Desenvolved by Lucio </p>
-    </div>
+    
+    <p id="copy">&copy; Desenvolved by Lucio </p>
+    
 
 </footer>
 

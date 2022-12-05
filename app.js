@@ -1,7 +1,7 @@
 ﻿
 var hour = 0
 var minute = 0
-var second = 0
+var second = 10
 var pause=false
 
 
@@ -44,8 +44,8 @@ function timer() {
     }else{
       //sound/ add in list #time break or study / and question (good,mid,bad) produtivity
       
-
-      var desciption = document.getElementById("desciption")
+      console.log('break')
+      var desciption = document.getElementById("description")
       desciption.innerHTML=`Time Break` 
 
       timerBreak()
@@ -59,7 +59,7 @@ function timer() {
 ////////////////////////////////////////////////////////////////////
 
 var hourBreak = 0
-var minuteBreak = 0
+var minuteBreak = 1
 var secondBreak = 0
 
 
@@ -110,7 +110,7 @@ function countStudy() {
 function taskStudyCompleted() {
   // create a new div element
   const newDiv = document.createElement("div");
-  newDiv.className='Marking'
+  newDiv.className='marking-count'
   countStudy()
   // and give it some content
   const newContent = document.createTextNode(`# ${count} round of study completed!`);
@@ -119,7 +119,7 @@ function taskStudyCompleted() {
   newDiv.appendChild(newContent);
 
   // add the newly created element and its content into the DOM
-  const currentDiv = document.getElementById("div1");
+  const currentDiv = document.getElementById("marking");
   document.body.insertBefore(newDiv, currentDiv);
 }
 
@@ -127,16 +127,16 @@ function taskStudyCompleted() {
 function breakCompleted() {
   // create a new div element
   const newDiv = document.createElement("div");
-  newDiv.className='Marking'
+  newDiv.className='marking-count'
   
   // and give it some content
-  const newContent = document.createTextNode(`Another round of pause completed!`);
+  const newContent = document.createTextNode(`Pause round completed!`);
 
   // add the text node to the newly created div
   newDiv.appendChild(newContent);
 
   // add the newly created element and its content into the DOM
-  const currentDiv = document.getElementById("div1");
+  const currentDiv = document.getElementById("marking");
   document.body.insertBefore(newDiv, currentDiv);
   
 }
@@ -157,19 +157,43 @@ function _stop(){
 }
 
 
-function setTime(h,m,s){
-  h=hourBreak
-  m=minuteBreak
-  s=secondBreak
-  //config in html time focus
+//for capture dt
+/*
+var hour = 0
+var minute = 0
+var second = 0
+
+var hourBreak = 0
+var minuteBreak = 0
+var secondBreak = 0
+*/ 
+
+function save(){
+  hour = document.getElementById('box-hour').value
+  minute= document.getElementById('box-minute').value
+  second= document.getElementById('box-second').value
+
+  hourBreak = document.getElementById('box-break-hour').value
+  minuteBreak = document.getElementById('box-break-minute').value
+  secondBreak = document.getElementById('box-break-second').value
 }
 
-function setBreak(h,m,s){
-  h=hourBreak
-  m=minuteBreak
-  s=secondBreak
-  //config in html time to brak
+
+function reset(){
+  hour = 
+  minute = document.getElementById('minute')
+  second = document.getElementById('second')
+
+  
+
 }
+
+
+
+
+
+
+
 
 
 ////TESTING

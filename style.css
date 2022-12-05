@@ -126,7 +126,7 @@ header{
     left: 128px;
 }
 
-.copy{
+#copy{
     text-align: center;
     font-size: x-large;
 }
@@ -136,3 +136,15 @@ header{
 .marking{
     text-align:center;
 }
+
+.marking-count{
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    width: 300px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+
