@@ -1,17 +1,104 @@
-﻿
-var hour = 0
-var minute = 0
-var second = 10
+﻿var timeHour = 0
+var timeMinute = 0
+var timeSecond = 10
+
+
+var timeHourBreak = 0
+var timeMinuteBreak = 0
+var timeSecondBreak = 10
+
+
+var hour = timeHour
+var minute = timeMinute
+var second = timeSecond
+
 var pause=false
 
+var counterBreakOrFocus = 0
+
+var mlseconds = 1000
+var timeron = false
 
 
 
-/////////////////////////////////
+function start(){
+  if(timeron==false||pause==true){
+    pause=false
+    timer()
+  }
+  
+}
 
-                
+function _stop(){
+  pause=true
+  
+}
 
-function timer() {        
+
+
+function save(){
+  timeHour = document.getElementById('box-hour').value
+  timeMinute= document.getElementById('box-minute').value
+  timeSecond= document.getElementById('box-second').value
+
+  timeHourBreak = document.getElementById('box-break-hour').value
+  timeMinuteBreak = document.getElementById('box-break-minute').value
+  timeSecondBreak = document.getElementById('box-break-second').value
+//hide the configurator timer
+
+}
+
+
+function reset(){
+  _stop()
+
+  
+  
+  setTimeout(() => {
+    //code
+    hour = timeHour
+    minute = timeMinute
+    second = timeSecond
+  
+    var desciption = document.getElementById("description")
+    desciption.innerHTML=`Time Focus`
+    var sec = document.getElementById("second")
+    sec.innerHTML=`${second}`
+
+    var min = document.getElementById("minute")
+    min.innerHTML=`${minute}`
+
+    var hou = document.getElementById("hour")
+    hou.innerHTML=`${hour}`
+    
+    
+    
+  }, "100")
+  
+
+  
+
+}
+
+
+var box = document.getElementById("conteinerConfig") 
+
+function config(){   
+  box.style.display = 'block'
+}
+
+window.onclick = function(event){
+  if(event.target == box){
+    box.style.display = 'none'
+  }
+}
+
+
+
+
+///////////////////////////////
+function timer() { 
+  timeron = true       
   setTimeout(function() {  
     if (second==0&&minute>0){
         minute-=1
@@ -21,7 +108,12 @@ function timer() {
         hour-=1
         minute=59
     }
-    second-=1  
+    if(pause==false){
+      second-=1
+    }else{
+      return
+    }
+      
 
     //console.log(`${hour}:${minute}:${second}`)
     //second
@@ -39,67 +131,49 @@ function timer() {
 
     //transfer to html query selector
     
-    if (second>0&&pause==false) {          
+    if (second>0) {          
       timer()             
     }else{
-      //sound/ add in list #time break or study / and question (good,mid,bad) produtivity
-      
-      console.log('break')
-      var desciption = document.getElementById("description")
-      desciption.innerHTML=`Time Break` 
+      timeron = false
 
-      timerBreak()
+      //contador impar par para decidir se vai ser focus ou break
+
+      counterBreakOrFocus+=1
+      if (counterBreakOrFocus%2==0){
+        hour = timeHourBreak
+        minute = timeMinuteBreak
+        second = timeSecondBreak
+        var desciption = document.getElementById("description")
+        desciption.innerHTML=`Time Break`
+        taskStudyCompleted()
+        timer()
+
+
+      }else{
+        hour = timeHour
+        minute = timeMinute
+        second = timeSecond
+        var desciption = document.getElementById("description")
+        desciption.innerHTML=`Time Focus`
+        breakCompleted()
+        timer()
+      }
+
+
+      
 
     }                    
-  }, 1000)
+  }, mlseconds)
   
     
 }
 
 ////////////////////////////////////////////////////////////////////
 
-var hourBreak = 0
-var minuteBreak = 1
-var secondBreak = 0
 
 
-function timerBreak() {        
-    setTimeout(function() {  
-      if (secondBreak==0&&minuteBreak>0){
-          minuteBreak-=1
-          secondBreak=60
-      }
-      if(minuteBreak==00&&hourBreak>0){
-          hourBreak-=1
-          minuteBreak=59
-      }
-      secondBreak-=1  
-  
-      //console.log(`${hour}:${minute}:${second}`)
-      //second
-      
-      var bsec = document.getElementById("second")
-      bsec.innerHTML=`${secondBreak}`
-  
-      var bMin = document.getElementById("minute")
-      bMin.innerHTML=`${minuteBreak}`
-  
-      var bHou = document.getElementById("hour")
-      bHou.innerHTML=`${hourBreak}`
-  
-  
-  
-      //transfer to html query selector
-      
-      if (secondBreak>0&&pause==false) {          
-        timerBreak()             
-      }else{
-        //sound/ add in list #time break or study / and question (good,mid,bad) produtivity 
-      }                    
-    }, 1000)
-    
-      
-  }
+
+
 
 ////////////////////////////////////////////////////////////////////
 var count =0
@@ -144,72 +218,6 @@ function breakCompleted() {
 
 
 
-
-
-
-function start(){
-  pause=false
-  timer()
-}
-
-function _stop(){
-  pause=true
-}
-
-
-//for capture dt
-/*
-var hour = 0
-var minute = 0
-var second = 0
-
-var hourBreak = 0
-var minuteBreak = 0
-var secondBreak = 0
-*/ 
-
-function save(){
-  hour = document.getElementById('box-hour').value
-  minute= document.getElementById('box-minute').value
-  second= document.getElementById('box-second').value
-
-  hourBreak = document.getElementById('box-break-hour').value
-  minuteBreak = document.getElementById('box-break-minute').value
-  secondBreak = document.getElementById('box-break-second').value
-}
-
-
-function reset(){
-  hour = 
-  minute = document.getElementById('minute')
-  second = document.getElementById('second')
-
-  
-
-}
-
-
-
-
-
-
-
-
-
-////TESTING
-
-//start()
-//stop()
-//setTime()
-//setBreak()
-//createLi()
-//createLiBreak()
-
-
-
-//OKS
-
-//timer()
 
 
 
