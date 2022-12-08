@@ -7,6 +7,17 @@
     cursor: pointer;
 }
 
+.close-button{
+    color: red;
+    background-color: rgb(rgb(139, 91, 91), green, blue);
+    width: 25px;
+    height: 27px;
+    font-size: 20px;
+    text-indent: center;
+    position: relative;
+    bottom: 215px;
+    left: 260px;
+}
 .conteinerConfig{
     font-family: sans-serif;
     z-index: 1;
@@ -24,6 +35,7 @@
     transform: translate(-50%, 0);
     display: none; /*here in js hide or open in screem (fixed/none)*/
 }
+
 .description{
     font-size: x-large;
     text-align: center;
@@ -52,6 +64,7 @@ input{
     height: 28px;
     width: 50px;
     font-size: large; 
+    
 }
 /*////////////// COnfig feito//////////*/
 

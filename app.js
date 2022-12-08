@@ -1,11 +1,11 @@
 ﻿var timeHour = 0
 var timeMinute = 0
-var timeSecond = 10
+var timeSecond = 00
 
 
 var timeHourBreak = 0
 var timeMinuteBreak = 0
-var timeSecondBreak = 10
+var timeSecondBreak = 00
 
 
 var hour = timeHour
@@ -44,6 +44,8 @@ function save(){
   timeHourBreak = document.getElementById('box-break-hour').value
   timeMinuteBreak = document.getElementById('box-break-minute').value
   timeSecondBreak = document.getElementById('box-break-second').value
+  closeBox()
+  reset()
 //hide the configurator timer
 
 }
@@ -81,17 +83,29 @@ function reset(){
 }
 
 
-var box = document.getElementById("conteinerConfig") 
+
 
 function config(){   
+  var box = document.getElementById("conteinerConfig")
   box.style.display = 'block'
+  
 }
 
-window.onclick = function(event){
+
+function closeBox(){
+  var box = document.getElementById("conteinerConfig")
+  box.style.display = 'none'
+}
+
+
+
+/*window.addEventListener('click',function(event){
   if(event.target == box){
+    var box = document.getElementById("conteinerConfig")
     box.style.display = 'none'
   }
-}
+})*/
+ 
 
 
 
@@ -131,7 +145,7 @@ function timer() {
 
     //transfer to html query selector
     
-    if (second>0) {          
+    if (second>-1) {          
       timer()             
     }else{
       timeron = false
