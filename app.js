@@ -1,21 +1,22 @@
-﻿var timeHour = 0
-var timeMinute = 0
+﻿
+//var configs timer focus
+
+var timeHour = 00
+var timeMinute = 45
 var timeSecond = 00
 
-
+//var configs time breaks
 var timeHourBreak = 0
-var timeMinuteBreak = 0
+var timeMinuteBreak = 15
 var timeSecondBreak = 00
 
-
+//var used in timer 
 var hour = timeHour
 var minute = timeMinute
 var second = timeSecond
 
 var pause=false
-
 var counterBreakOrFocus = 0
-
 var mlseconds = 1000
 var timeron = false
 
@@ -32,6 +33,18 @@ function start(){
 function _stop(){
   pause=true
   
+}
+
+function config(){   
+  var box = document.getElementById("conteinerConfig")
+  box.style.display = 'block'
+  
+}
+
+
+function closeBox(){
+  var box = document.getElementById("conteinerConfig")
+  box.style.display = 'none'
 }
 
 
@@ -85,30 +98,6 @@ function reset(){
 
 
 
-function config(){   
-  var box = document.getElementById("conteinerConfig")
-  box.style.display = 'block'
-  
-}
-
-
-function closeBox(){
-  var box = document.getElementById("conteinerConfig")
-  box.style.display = 'none'
-}
-
-
-
-/*window.addEventListener('click',function(event){
-  if(event.target == box){
-    var box = document.getElementById("conteinerConfig")
-    box.style.display = 'none'
-  }
-})*/
- 
-
-
-
 
 ///////////////////////////////
 function timer() { 
@@ -116,9 +105,10 @@ function timer() {
   setTimeout(function() {  
     if (second==0&&minute>0){
         minute-=1
-        second=60
+        second=59
+        
     }
-    if(minute==00&&hour>0){
+    if(minute==0&&hour>0){
         hour-=1
         minute=59
     }
@@ -143,16 +133,17 @@ function timer() {
 
 
 
-    //transfer to html query selector
+    
     
     if (second>-1) {          
       timer()             
     }else{
       timeron = false
 
-      //contador impar par para decidir se vai ser focus ou break
-
+      
       counterBreakOrFocus+=1
+      //break or focus
+      
       if (counterBreakOrFocus%2==0){
         hour = timeHourBreak
         minute = timeMinuteBreak
@@ -190,6 +181,7 @@ function timer() {
 
 
 ////////////////////////////////////////////////////////////////////
+//count tasks completed
 var count =0
 function countStudy() {
    count+=1

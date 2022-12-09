@@ -3,6 +3,19 @@
     font-family: sans-serif;
 }
 
+
+
+/*
+dark
+primary color
+secondary color
+
+light 
+primay color
+secondary color
+
+*/
+
 .click{
     cursor: pointer;
 }
@@ -22,7 +35,7 @@
     font-family: sans-serif;
     z-index: 1;
     
-    background-color: gray;
+    background-color:rgba(201, 201, 201, 0.980);
 
     border-style: solid;
     border-radius:20px ;
